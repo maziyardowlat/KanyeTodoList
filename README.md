@@ -19,7 +19,7 @@ draw of this app.
 
 - As a user, I want to be able to add a task to my todo-list
 - As a user, I want to be able to remove a task from my todo-list
-- As a user, I want to be able to cross out a task as being completed in muy todo-list
+- As a user, I want to be able to cross out a task as being completed in my todo-list
 - As a user, I want to be able to view multiple todo-lists at the same time
 - As a user, I want to be able to make modifications to specific todo-lists without 
 affecting the functionality of the other todo-list 
