@@ -16,6 +16,7 @@ draw of this app.
 
 - As a user, I want to be able to add a task to my todo-list
 - As a user, I want to be able to remove a task from my todo-list
+- As a user, I am able to view the tasks on my todo-list 
 - As a user, I want to be able to add a specific start date, name, description and title to my task
 - As a user, I want to be able to add a specific targetted time (date) that I want to finish the task under
 - As a user, I want to be able to cross out a task as being completed in my todo-list
