@@ -41,6 +41,7 @@ public class TodoListApp {
     private void init() {
         input = new Scanner(System.in);
         task1 = new Task("asdf", "asdf", "asdf", "asdf", "asdf");
+        list1 = new TodoList();
 
     }
 
@@ -61,12 +62,19 @@ public class TodoListApp {
         }
     }
 
+    //MODIFIES: this
+    //EFFECTS: constructs a deposit transaction
     private void doNewList(){
 
     }
 
-    private void doShowTask(){
+    private String doShowTask() {
+        String selection = "";
+        if (selection.equals("n")) {
+            return task1.getTitle();
+        }
 
+        return selection;
     }
 
 
