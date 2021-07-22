@@ -64,7 +64,25 @@ public class TodoListTest {
         assertEquals("Tomorrow", task1.getDueDate());
         assertEquals("DaBaby", task1.getNotes());
         assertEquals("Today", task1.getStartDate());
+    }
 
+    @Test
+    public void testSetFinished(){
+        task1.setFinished(true);
+        assertTrue(task1.isFinished());
+    }
+    @Test
+    public void testSetStrings(){
+        task1.setDueDate("9/4/29");
+        assertEquals("9/4/29", task1.getDueDate());
+        task1.setName("The First Task");
+        assertEquals("The First Task", task1.getName());
+        task1.setStartDate("3/4/4");
+        assertEquals("3/4/4", task1.getStartDate());
+        task1.setTitle("This is a good book");
+        assertEquals("This is a good book", task1.getTitle());
+        task1.setNotes("Good Notes");
+        assertEquals("Good Notes", task1.getNotes());
     }
 
 
