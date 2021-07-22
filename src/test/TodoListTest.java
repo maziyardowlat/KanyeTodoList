@@ -1,17 +1,15 @@
 import model.Task;
 import model.TodoList;
-import org.junit.Before;
-import org.junit.Test;
-
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.*;
+
 
 public class TodoListTest {
     private Task task1;
     private TodoList todoList;
 
-    @Before
+    @BeforeEach
     public void setup() {
         task1 = new Task("task", "task", "task", "task", "task");
         todoList = new TodoList();
