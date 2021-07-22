@@ -42,6 +42,8 @@ public class TodoListApp {
             viewTask();
         } else if (command.equals("v")) {
             addTask();
+        } else if (command.equals("r")) {
+            removeTask();
         } else {
             System.out.println("What are you doing Bubsy. Choose another choice");
         }
@@ -58,6 +60,7 @@ public class TodoListApp {
         System.out.println("\nSelect from:");
         System.out.println("\tn -> View Current Tasks");
         System.out.println("\tv -> Add A New Task");
+        System.out.println("\tr -> Remove A Current Task");
 
     }
 
@@ -87,9 +90,13 @@ public class TodoListApp {
     }
 
     private void viewTask() {
-        for (int i = 0; i < list1.getTasks().size(); i++) {
-            Task task = list1.getTasks().get(i);
-            printTask(task);
+        if (list1.getTasks().size() > 0) {
+            for (int i = 0; i < list1.getTasks().size(); i++) {
+                Task task = list1.getTasks().get(i);
+                printTask(task);
+            }
+        } else {
+            printSad(task1);
         }
     }
 
@@ -107,16 +114,41 @@ public class TodoListApp {
         editor(name, title, dueDate, notes, startDate);
     }
 
-    private void printTask(Task selected) {
-        System.out.println(selected.getTitle());
-        System.out.println(selected.getDueDate());
+    private void removeTask() {
+        System.out.println("Remove A Class Name here:");
+        String name = input.next();
+        System.out.println("remove A Title here:");
+        String title = input.next();
+        System.out.println("Remove A Due Date here:");
+        String dueDate = input.next();
+        System.out.println("Remove the Notes");
+        String notes = input.next();
+        System.out.println("Remove the start Date");
+        String startDate = input.next();
+        remover(name, title, dueDate, notes, startDate);
     }
+
 
     private void editor(String name, String title, String dueDate, String notes, String startDate) {
         list1.addTask(name, title, dueDate, notes, startDate);
     }
 
+    private void remover(String name, String title, String dueDate, String notes, String startDate) {
+        if (list1.getTasks().size() > 0) {
+            list1.removeTask(name, title, dueDate, notes, startDate);
+        }
+        printSad(task1);
+    }
 
+    private void printTask(Task selected) {
+        String s = selected.getTitle() + " Due On:" + selected.getDueDate();
+        System.out.println(s);
+    }
+
+    private void printSad(Task selected) {
+        String s = "Sorry, nothing added yet";
+        System.out.println(s);
+    }
 
 
 }

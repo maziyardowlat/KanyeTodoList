@@ -53,5 +53,13 @@ public class TodoListTest {
         List<Task> tasks = todoList.getTasks();
         assertEquals(0, tasks.size());
     }
+
+    @Test
+    public void testSpecificRemoval() {
+        todoList.addTask("name", "title", "name", "title", "name");
+        todoList.removeTask("name","title", "name", "title", "name");
+        List<Task> tasks = todoList.getTasks();
+        assertEquals(0, tasks.size());
+    }
 }
 

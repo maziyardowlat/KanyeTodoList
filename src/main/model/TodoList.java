@@ -5,7 +5,6 @@ import java.util.List;
 
 public class TodoList {
     private ArrayList<Task> tasks;
-    private Task task1;
 
     //Constructor, makes a new TodoList
     public TodoList() {
@@ -27,7 +26,6 @@ public class TodoList {
     //MODIFIES: this
     //EFFECTS: removes this task from the todolist
     public void removeTask(String name, String title, String dueDate, String notes, String startDate) {
-        Task task1 = new Task(name, title, dueDate, notes, startDate);
-        tasks.remove(task1);
+        tasks.remove(tasks.size() - 1);
     }
 }
