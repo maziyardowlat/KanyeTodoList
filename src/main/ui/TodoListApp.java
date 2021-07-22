@@ -3,7 +3,6 @@ package ui;
 import model.Task;
 import model.TodoList;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class TodoListApp {
@@ -40,7 +39,7 @@ public class TodoListApp {
 
     private void processCommand(String command) {
         if (command.equals("n")) {
-            doTask();
+            viewTask();
         } else if (command.equals("v")) {
             addTask();
         } else {
@@ -50,7 +49,7 @@ public class TodoListApp {
 
     private void init() {
         input = new Scanner(System.in);
-        task1 = new Task("mashoood", "arooowowo", "738", "asdf", "asdf");
+        task1 = new Task("james", "Science 101", "738", "asdfasdf", "402");
         list1 = new TodoList();
 
     }
@@ -87,16 +86,25 @@ public class TodoListApp {
         return list1;
     }
 
-    private void doTask() {
-        Task selected = showTask();
-        System.out.println("here is the current tasks on hand:");
-        printTask(selected);
+    private void viewTask() {
+        for (int i = 0; i < list1.getTasks().size(); i++) {
+            Task task = list1.getTasks().get(i);
+            printTask(task);
+        }
     }
 
     private void addTask() {
-        TodoList selected = modifyTask();
-        System.out.println("Add A New Task here:");
-        editor(selected);
+        System.out.println("Add A Class Name here:");
+        String name = input.next();
+        System.out.println("Add A Title here:");
+        String title = input.next();
+        System.out.println("Add A Due Date here:");
+        String dueDate = input.next();
+        System.out.println("Add some notes here:");
+        String notes = input.next();
+        System.out.println("Add A start Date here:");
+        String startDate = input.next();
+        editor(name, title, dueDate, notes, startDate);
     }
 
     private void printTask(Task selected) {
@@ -104,52 +112,10 @@ public class TodoListApp {
         System.out.println(selected.getDueDate());
     }
 
-    private void editor(TodoList selected) {
-        list1.addTask("new", "new", "mew", "mew", "mew");
+    private void editor(String name, String title, String dueDate, String notes, String startDate) {
+        list1.addTask(name, title, dueDate, notes, startDate);
     }
 
-
-
-
-
-//    private TodoList selectTask() {
-//        String selection = "";
-//
-//        while (!(selection.equals("a") || selection.equals("b"))) {
-//            System.out.println("Press a to add a new task to your list");
-//            System.out.println("Press b to view the current titles for your list");
-//            selection = input.next();
-//            selection = selection.toLowerCase();
-//        }
-//
-//        if (selection.equals("a")) {
-//            list1.addTask("asdf", "asdf", "adsf", "asdf", "asdf");
-//            return list1;
-//        } else {
-//            return task1.getTitle().index(0);
-//        }
-//    }
-//
-//    //MODIFIES: this
-//    //EFFECTS: constructs a deposit transaction
-//    private void doNewList() {
-//        TodoList lista = selectTask();
-//        String selection = "";
-//        if (selection.equals("n")) {
-//            list1.addTask("asdf", "asdf", "adsf", "asdf", "asdf");
-//        } else {
-//            System.out.println("Please Press n and enter your specific task");
-//        }
-//
-//    }
-//
-//    private String doShowTask() {
-//        String selection = "";
-//        if (selection.equals("v")) {
-//            return task1.getTitle();
-//        }
-//        return selection;
-//    }
 
 
 

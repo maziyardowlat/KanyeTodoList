@@ -20,12 +20,14 @@ public class TodoList {
     //MODIFIES: this
     //EFFECTS: adds a new task to the todolist
     public void addTask(String name, String title, String dueDate, String notes, String startDate) {
+        Task task1 = new Task(name, title, dueDate, notes, startDate);
         tasks.add(task1);
     }
 
     //MODIFIES: this
     //EFFECTS: removes this task from the todolist
     public void removeTask(String name, String title, String dueDate, String notes, String startDate) {
+        Task task1 = new Task(name, title, dueDate, notes, startDate);
         tasks.remove(task1);
     }
 }
