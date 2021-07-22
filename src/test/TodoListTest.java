@@ -11,7 +11,7 @@ public class TodoListTest {
 
     @BeforeEach
     public void setup() {
-        task1 = new Task("task", "task", "task", "task", "task");
+        task1 = new Task("task", "The Title", "Tomorrow", "DaBaby", "Today");
         todoList = new TodoList();
     }
 
@@ -56,5 +56,17 @@ public class TodoListTest {
         List<Task> tasks = todoList.getTasks();
         assertEquals(0, tasks.size());
     }
+
+    @Test
+    public void testConstructor(){
+        assertEquals("task", task1.getName());
+        assertEquals("The Title", task1.getTitle());
+        assertEquals("Tomorrow", task1.getDueDate());
+        assertEquals("DaBaby", task1.getNotes());
+        assertEquals("Today", task1.getStartDate());
+
+    }
+
+
 }
 
