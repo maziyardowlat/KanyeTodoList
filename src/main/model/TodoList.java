@@ -23,8 +23,8 @@ public class TodoList {
         tasks.add(task1);
     }
 
-    //MODIFIES: this
-    //EFFECTS: removes this task from the todolist
+    // MODIFIES: this
+    // EFFECTS: removes this task from the todolist
     public void removeTask(String name, String title, String dueDate, String notes, String startDate) {
         for (int i = 0; i < tasks.size(); i++) {
             if ((tasks.get(i).getName().equals(name))) {

@@ -1,12 +1,13 @@
 package model;
 
+// Represents a Task that has a name, a title, notes a Due Date, start Date and if the task if finished or not
 public class Task {
-    private String name;
-    private String title;
-    private String notes;
-    private String dueDate;
-    private String startDate;
-    private boolean finished;
+    private String name; //Name of the task
+    private String title; //Title of the task
+    private String notes; //Notes that are left on the task
+    private String dueDate; //The due date of the task
+    private String startDate; //The start date of the task
+    private boolean finished; //if teh task is finished or not
 
     public Task(String name, String title, String dueDate, String notes, String startDate) {
         this.name = name;
