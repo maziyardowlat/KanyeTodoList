@@ -15,6 +15,7 @@ public class TodoListApp {
         runList();
     }
 
+    //
     private void runList() {
         boolean keepGoing = true;
         String command = null;
@@ -136,8 +137,9 @@ public class TodoListApp {
     private void remover(String name, String title, String dueDate, String notes, String startDate) {
         if (list1.getTasks().size() > 0) {
             list1.removeTask(name, title, dueDate, notes, startDate);
+        } else {
+            dumbo(task1);
         }
-        printSad(task1);
     }
 
     private void printTask(Task selected) {
@@ -149,6 +151,13 @@ public class TodoListApp {
         String s = "Sorry, nothing added yet";
         System.out.println(s);
     }
+
+    private void dumbo(Task selected) {
+        String s = "Sorry, you cannot do thist";
+        System.out.println(s);
+    }
+
+
 
 
 }

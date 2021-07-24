@@ -26,6 +26,11 @@ public class TodoList {
     //MODIFIES: this
     //EFFECTS: removes this task from the todolist
     public void removeTask(String name, String title, String dueDate, String notes, String startDate) {
-        tasks.remove(tasks.size() - 1);
+        for (int i = 0; i < tasks.size(); i++) {
+            if ((tasks.get(i).getName().equals(name))) {
+                tasks.remove(tasks.indexOf(tasks.get(i)));
+//        tasks.remove(tasks.size() - 1);
+            }
+        }
     }
 }
