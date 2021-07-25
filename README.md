@@ -19,14 +19,13 @@ draw of this app.
 - As a user, I want to be able to add a task to my todo-list
 - As a user, I want to be able to remove a task from my todo-list
 - As a user, I am able to view the tasks on my todo-list 
-- As a user, I want to be able to add a specific start date, name, description and title to my task
+- As a user, I want to be able to add a specific start date, name, and title to my task
 - As a user, I want to be able to add a specific targetted time (date) that I want to finish the task under
+- As a user, I want to be able to view and add my current grade for a specific class
 - As a user, I want to be able to cross out a task as being completed in my todo-list
 - As a user, I want to be able to view multiple todo-lists at the same time
 - As a user, I want to be able to make modifications to specific todo-lists without
   affecting the functionality of the other todo-list
-- As a user, I want to have a dedicated tabs where I can select my course subject and enter in my current grade
-  and the grade that I want to finish the class with
 - As a user, I want to be able to write down notes for each specific course I have, so I can have
   a reference to how I want to improve my grade or where I want to finish the class with
 

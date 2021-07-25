@@ -61,9 +61,8 @@ public class TodoListApp {
     //EFFECTS: initializes the todoList
     private void init() {
         input = new Scanner(System.in);
-        task1 = new Task("james", "Science 101", "738", "asdfasdf", "402");
+        task1 = new Task("james", "Science 101", "738", "asdfasdf", 402);
         list1 = new TodoList();
-
     }
 
     // EFFECTS: displays the list of options that are available to the user.
@@ -83,6 +82,7 @@ public class TodoListApp {
             for (int i = 0; i < list1.getTasks().size(); i++) {
                 Task task = list1.getTasks().get(i);
                 printTask(task);
+                printGrade(task);
             }
         } else {
             printSad(task1);
@@ -98,11 +98,11 @@ public class TodoListApp {
         String title = input.next();
         System.out.println("Add A Due Date here:");
         String dueDate = input.next();
-        System.out.println("Add some notes here:");
-        String notes = input.next();
         System.out.println("Add A start Date here:");
         String startDate = input.next();
-        editor(name, title, dueDate, notes, startDate);
+        System.out.println("Add A Grade here:");
+        Integer grade = input.nextInt();
+        editor(name, title, dueDate, startDate, grade);
     }
 
     //MODIFIES: this
@@ -112,27 +112,21 @@ public class TodoListApp {
         String name = input.next();
         System.out.println("remove A Title here:");
         String title = input.next();
-        System.out.println("Remove A Due Date here:");
-        String dueDate = input.next();
-        System.out.println("Remove the Notes");
-        String notes = input.next();
-        System.out.println("Remove the start Date");
-        String startDate = input.next();
-        remover(name, title, dueDate, notes, startDate);
+        remover(name, title);
     }
 
     //MODIFIES: this
     //EFFECTS: adds a task to the list.
-    private void editor(String name, String title, String dueDate, String notes, String startDate) {
-        list1.addTask(name, title, dueDate, notes, startDate);
+    private void editor(String name, String title, String dueDate, String startDate, Integer grade) {
+        list1.addTask(name, title, dueDate, startDate, grade);
     }
 
     //MODIFIES: this
     //EFFECTS: checks to see the size of the list, and if the list size is bigger than 0, it removes the task.
     //Otherwise is returns a message
-    private void remover(String name, String title, String dueDate, String notes, String startDate) {
+    private void remover(String name, String title) {
         if (list1.getTasks().size() > 0) {
-            list1.removeTask(name, title, dueDate, notes, startDate);
+            list1.removeTask(name, title);
         } else {
             dumbo(task1);
         }
@@ -150,9 +144,14 @@ public class TodoListApp {
         System.out.println(s);
     }
 
+    private void printGrade(Task selected) {
+        String s = "Your current Grade for " + selected.getName() + " Class " + " is " + selected.getGrade();
+        System.out.println(s);
+    }
+
     //EFFECTS: prints off the message that you cannot perform the following task at this moment
     private void dumbo(Task selected) {
-        String s = "Sorry, you cannot do this. Please Choose another Option.";
+        String s = "Sorry, you cannot do this. Either you have tried to remove the Wrong Task, or there are no tasks.";
         System.out.println(s);
     }
 

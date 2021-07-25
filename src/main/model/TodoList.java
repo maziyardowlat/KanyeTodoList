@@ -18,19 +18,19 @@ public class TodoList {
 
     //MODIFIES: this
     //EFFECTS: adds a new task to the todolist
-    public void addTask(String name, String title, String dueDate, String notes, String startDate) {
-        Task task1 = new Task(name, title, dueDate, notes, startDate);
+    public void addTask(String name, String title, String dueDate, String startDate, Integer grade) {
+        Task task1 = new Task(name, title, dueDate, startDate, grade);
         tasks.add(task1);
     }
 
     // MODIFIES: this
     // EFFECTS: removes this task from the todolist
-    public void removeTask(String name, String title, String dueDate, String notes, String startDate) {
+    public void removeTask(String name, String title) {
         for (int i = 0; i < tasks.size(); i++) {
-            if ((tasks.get(i).getName().equals(name))) {
+            if ((tasks.get(i).getName().equals(name)) && (tasks.get(i).getTitle().equals(title))) {
                 tasks.remove(tasks.indexOf(tasks.get(i)));
-//        tasks.remove(tasks.size() - 1);
             }
         }
     }
+
 }

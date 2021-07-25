@@ -4,17 +4,17 @@ package model;
 public class Task {
     private String name; //Name of the task
     private String title; //Title of the task
-    private String notes; //Notes that are left on the task
     private String dueDate; //The due date of the task
     private String startDate; //The start date of the task
-    private boolean finished; //if teh task is finished or not
+    private Integer grade;
+    private boolean finished; //if the task is finished or not
 
-    public Task(String name, String title, String dueDate, String notes, String startDate) {
+    public Task(String name, String title, String dueDate, String startDate, Integer grade) {
         this.name = name;
         this.dueDate = dueDate;
         this.title = title;
-        this.notes = notes;
         this.startDate = startDate;
+        this.grade = grade;
     }
 
     public String getName() {
@@ -25,6 +25,10 @@ public class Task {
         return startDate;
     }
 
+    public Integer getGrade() {
+        return grade;
+    }
+
     public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
@@ -33,9 +37,6 @@ public class Task {
         return title;
     }
 
-    public String getNotes() {
-        return notes;
-    }
 
     public String getDueDate() {
         return dueDate;
@@ -53,6 +54,10 @@ public class Task {
         this.finished = finished;
     }
 
+    public void setGrade(Integer grade) {
+        this.grade = grade;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -61,7 +66,4 @@ public class Task {
         this.title = title;
     }
 
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
 }
