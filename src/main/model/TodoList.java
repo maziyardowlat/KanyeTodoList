@@ -24,7 +24,7 @@ public class TodoList {
     }
 
     // MODIFIES: this
-    // EFFECTS: removes this task from the todolist
+    // EFFECTS: removes this task from the todolist if the name of the task and the title of the task matches.
     public void removeTask(String name, String title) {
         for (int i = 0; i < tasks.size(); i++) {
             if ((tasks.get(i).getName().equals(name)) && (tasks.get(i).getTitle().equals(title))) {

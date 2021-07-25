@@ -87,6 +87,20 @@ public class TodoListTest {
 
     }
 
+    @Test
+    public void testRemoveFails() {
+        todoList.addTask("Science","Biology", "Tomorrow", "Today", 67);
+        todoList.removeTask("Science", "Math");
+        assertEquals(1, todoList.getTasks().size());
+    }
+
+    @Test
+    public void testRemovefailsName(){
+        todoList.addTask("Kanye", "West", "Monday", "Today", 43);
+        todoList.removeTask("West", "Kanye");
+        assertEquals(1, todoList.getTasks().size());
+    }
+
 
 }
 

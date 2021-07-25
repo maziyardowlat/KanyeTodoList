@@ -28,6 +28,18 @@ draw of this app.
   affecting the functionality of the other todo-list
 - As a user, I want to be able to write down notes for each specific course I have, so I can have
   a reference to how I want to improve my grade or where I want to finish the class with
+  
+</p>
 
+<p> <strong> Realized User Stories (Phase 1) </strong>
+
+- You can add a number of tasks to the todo-List
+- You can remove any number of tasks from the list, assuming there exist correspinding todo-tasks 
+- You can view all of the tasks that have been added to the todo-list at any moment
+- You can add a specific start date, name, title to any todo-item for further clarification
+- You can add a specific end date to a task item. 
+- You can add a grade to the todo-item, which is displayed seperatley than the todo-item, which will get further 
+realized when the GUI is integrated.
+  
 
 </p>
