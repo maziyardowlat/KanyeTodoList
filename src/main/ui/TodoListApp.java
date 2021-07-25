@@ -72,6 +72,7 @@ public class TodoListApp {
         System.out.println("\tv -> View Current Tasks");
         System.out.println("\ta -> Add A New Task");
         System.out.println("\tr -> Remove A Current Task");
+        System.out.println("\tq -> Quit the TodoList");
 
     }
 

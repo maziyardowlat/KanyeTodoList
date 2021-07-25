@@ -14,6 +14,8 @@ While both of these features can be completed by Frankenstein-ing pieces of pape
 I actively use lists, as well as keeping track of my grades in an excel document, but having the ability to view my original plan alongside of having my grades and information about them available is the main
 draw of this app.
 
+<p> <strong> User Stories</strong>
+
 - As a user, I want to be able to add a task to my todo-list
 - As a user, I want to be able to remove a task from my todo-list
 - As a user, I am able to view the tasks on my todo-list 
@@ -27,7 +29,6 @@ draw of this app.
   and the grade that I want to finish the class with
 - As a user, I want to be able to write down notes for each specific course I have, so I can have
   a reference to how I want to improve my grade or where I want to finish the class with
-<p> <strong> User Stories</strong>
 
 
 </p>
