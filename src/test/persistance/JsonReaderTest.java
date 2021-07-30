@@ -25,10 +25,10 @@ public class JsonReaderTest extends JsonTest{
 
     @Test
     void testReaderEmptyWorkRoom() {
-        JsonReader reader = new JsonReader("./data/testReaderEmptyTodoList.json");
+        JsonReader reader = new JsonReader("./data/testTodoListEmpty.json");
         try {
             TodoList tl = reader.read();
-            assertEquals("My work room", tl.getTasks());
+            assertEquals(0, tl.getTasks().size());
         } catch (IOException e) {
             fail("Couldn't read from file");
         }
