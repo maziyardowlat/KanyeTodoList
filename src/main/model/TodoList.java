@@ -49,7 +49,6 @@ public class TodoList {
         for (Task t : tasks) {
             jsonArray.put(t.toJson());
         }
-
         return jsonArray;
     }
 

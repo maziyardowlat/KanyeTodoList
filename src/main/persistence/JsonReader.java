@@ -39,11 +39,6 @@ public class JsonReader {
 
     // EFFECTS: parses workroom from JSON object and returns it
     private TodoList parseTodoList(JSONObject jsonObject) {
-        String name = jsonObject.getString("name");
-        String title = jsonObject.getString("title");
-        String dueDate = jsonObject.getString("dueDate");
-        String startDate = jsonObject.getString("startDate");
-        Integer grade = jsonObject.getInt("grade");
         TodoList tl = new TodoList();
         addTasks(tl, jsonObject);
         return tl;
