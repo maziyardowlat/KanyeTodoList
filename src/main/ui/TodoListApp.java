@@ -2,7 +2,11 @@ package ui;
 
 import model.Task;
 import model.TodoList;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 //Several inspirations were taken from the TellerApp that was provided for this stage of the project, such as the
@@ -10,12 +14,15 @@ import java.util.Scanner;
 
 //TodoList application
 public class TodoListApp {
+    private static final String JSON_STORE = "./data/todolist.json";
     private Task task1;
     private TodoList list1;
     private Scanner input;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
 
     // EFFECTS: runs the teller application
-    public TodoListApp() {
+    public TodoListApp() throws FileNotFoundException {
         runList();
     }
 
@@ -52,6 +59,10 @@ public class TodoListApp {
             addTask();
         } else if (command.equals("r")) {
             removeTask();
+        } else if (command.equals("s")) {
+            saveTodoList();
+        } else if (command.equals("l")) {
+            loadTodoList();
         } else {
             System.out.println("What are you doing Mate. Choose another choice");
         }
@@ -62,6 +73,8 @@ public class TodoListApp {
     private void init() {
         input = new Scanner(System.in);
         task1 = new Task("james", "Science 101", "738", "asdfasdf", 402);
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         list1 = new TodoList();
     }
 
@@ -71,6 +84,8 @@ public class TodoListApp {
         System.out.println("\tv -> View Current Tasks");
         System.out.println("\ta -> Add A New Task");
         System.out.println("\tr -> Remove A Current Task");
+        System.out.println("\ts -> Save the current TodoList");
+        System.out.println("\tl -> Load the current TodoList");
         System.out.println("\tq -> Quit the TodoList");
 
     }
@@ -86,6 +101,27 @@ public class TodoListApp {
             }
         } else {
             printSad(task1);
+        }
+    }
+
+    // EFFECTS: saves the workroom to file
+    private void saveTodoList() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(list1);
+            jsonWriter.close();
+            System.out.println("Saved " + task1.getName() + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    private void loadTodoList() {
+        try {
+            list1 = jsonReader.read();
+            System.out.println("Loaded " + task1.getName() + " from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
         }
     }
 
