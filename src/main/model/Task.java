@@ -8,8 +8,9 @@ public class Task {
     private String title; //Title of the task
     private String dueDate; //The due date of the task
     private String startDate; //The start date of the task
-    private Integer grade;
+    private Integer grade; //The grade for the specific intended class
     private boolean finished; //if the task is finished or not
+
 
     public Task(String name, String title, String dueDate, String startDate, Integer grade) {
         this.name = name;

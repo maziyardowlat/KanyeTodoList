@@ -9,9 +9,8 @@ import java.io.PrintWriter;
 
 import java.io.*;
 
-
+//Represents a writer that writes JSON representation of TodoList to file
 public class JsonWriter {
-    //Represents a writer that writes JSON representation of TodoList to file
     private static final int TAB = 4;
     private PrintWriter writer;
     private String designated;
@@ -21,10 +20,14 @@ public class JsonWriter {
         this.designated = designated;
     }
 
+    // MODIFIES: this
+    // EFFECTS: opens writer, and throws a file exception if the destination file cannot be opened
     public void open() throws FileNotFoundException {
         writer = new PrintWriter(new File(designated));
     }
 
+    // MODIFIES: this
+    // EFFECTS: writes JSON representation of workroom to file
     public void write(TodoList tl) {
         JSONObject json = tl.toJson();
         saveToFile(json.toString(TAB));

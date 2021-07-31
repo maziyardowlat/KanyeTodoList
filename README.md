@@ -29,6 +29,9 @@ draw of this app.
 - As a user, I want to be able to write down notes for each specific course I have, so I can have
   a reference to how I want to improve my grade or where I want to finish the class with
   
+- As a user, I want to be able to save my TodoList
+- As a user, I want to be able to load my TodoList from a file
+  
 </p>
 
 <p> <strong> Realized User Stories (Phase 1) </strong>
@@ -41,5 +44,13 @@ draw of this app.
 - You can add a grade to the todo-item, which is displayed seperatley than the todo-item, which will get further 
 realized when the GUI is integrated.
   
+
+</p>
+
+<p> <strong> Realized User Stories + Significant Changes (Phase 2) </strong>
+
+- You can save your TodoList
+- You can load your TodoList
+- For the grade input, the program does not crash if a non-integer value is inserted. 
 
 </p>

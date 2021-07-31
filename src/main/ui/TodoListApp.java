@@ -21,6 +21,17 @@ public class TodoListApp {
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
 
+    //MODIFIES: this
+    //EFFECTS: initializes the todoList
+    private void init() {
+        input = new Scanner(System.in);
+        task1 = new Task("james", "Science 101", "738", "asdfasdf", 402);
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
+        list1 = new TodoList();
+    }
+
+
     // EFFECTS: runs the teller application
     public TodoListApp() throws FileNotFoundException {
         runList();
@@ -68,16 +79,6 @@ public class TodoListApp {
         }
     }
 
-    //MODIFIES: this
-    //EFFECTS: initializes the todoList
-    private void init() {
-        input = new Scanner(System.in);
-        task1 = new Task("james", "Science 101", "738", "asdfasdf", 402);
-        jsonWriter = new JsonWriter(JSON_STORE);
-        jsonReader = new JsonReader(JSON_STORE);
-        list1 = new TodoList();
-    }
-
     // EFFECTS: displays the list of options that are available to the user.
     private void displayTask() {
         System.out.println("\nSelect from:");
@@ -116,6 +117,8 @@ public class TodoListApp {
         }
     }
 
+    // MODIFIES: this
+    // EFFECTS; loads todoList from file
     private void loadTodoList() {
         try {
             list1 = jsonReader.read();
@@ -137,6 +140,11 @@ public class TodoListApp {
         System.out.println("Add A start Date here:");
         String startDate = input.next();
         System.out.println("Add A Grade here:");
+        while (!input.hasNextInt()) {
+            input.nextLine();
+            input.nextLine();
+            System.out.println("Please Enter an Integer Instead");
+        }
         Integer grade = input.nextInt();
         editor(name, title, dueDate, startDate, grade);
     }
@@ -170,7 +178,7 @@ public class TodoListApp {
 
     //EFFECTS: combines a few of the notes for a task and prints it out
     private void printTask(Task selected) {
-        String s = selected.getTitle() + " Due On: " + selected.getDueDate() + " For: " + selected.getName();
+        String s = selected.getTitle() + " Is Due: " + selected.getDueDate() + " For: " + selected.getName();
         System.out.println(s);
     }
 
@@ -180,6 +188,7 @@ public class TodoListApp {
         System.out.println(s);
     }
 
+    //EFFECTS: prints our current grade.
     private void printGrade(Task selected) {
         String s = "Your current Grade for " + selected.getName() + " Class " + " is " + selected.getGrade();
         System.out.println(s);
