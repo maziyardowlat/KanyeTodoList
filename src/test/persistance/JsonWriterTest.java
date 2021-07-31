@@ -34,9 +34,10 @@ public class JsonWriterTest extends JsonTest{
             writer.open();
             writer.write(tl);
             writer.close();
-
             JsonReader reader = new JsonReader("./data/testTodoListEmpty.json");
             tl = reader.read();
+            List<Task> tasks = tl.getTasks();
+            assertEquals(0, tasks.size());
         } catch (IOException e) {
             fail("Exception should not have been thrown");
         }
