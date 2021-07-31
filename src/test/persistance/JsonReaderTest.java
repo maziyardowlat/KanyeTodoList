@@ -19,7 +19,7 @@ public class JsonReaderTest extends JsonTest{
             TodoList tl = reader.read();
             fail("IOException expected");
         } catch (IOException e) {
-            // pass
+            // passes
         }
     }
 
