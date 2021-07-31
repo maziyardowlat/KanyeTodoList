@@ -10,7 +10,12 @@ import java.io.IOException;
 import java.util.Scanner;
 
 //Several inspirations were taken from the TellerApp that was provided for this stage of the project, such as the
-// methods for runList, displayTask, init and process command to an extent.
+// methods for runList, displayTask, init and process command to an extent:
+// https://github.students.cs.ubc.ca/CPSC210/TellerApp.git
+
+//Several inspirations were also taken from the JsonSerializedDemo for this step of the project, such as the main
+// implementation of the JsonReader, JsonWriter and the implementation of them via the console log:
+// https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git
 
 //TodoList application
 public class TodoListApp {
