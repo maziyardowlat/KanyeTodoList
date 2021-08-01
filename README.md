@@ -29,7 +29,7 @@ draw of this app.
 - As a user, I want to be able to write down notes for each specific course I have, so I can have
   a reference to how I want to improve my grade or where I want to finish the class with
   
-- As a user, I want to be able to save my TodoList
+- As a user, I want to be able to save my TodoList to a file 
 - As a user, I want to be able to load my TodoList from a file
   
 </p>
@@ -49,8 +49,8 @@ realized when the GUI is integrated.
 
 <p> <strong> Realized User Stories + Significant Changes (Phase 2) </strong>
 
-- You can save your TodoList
-- You can load your TodoList
+- You can save your TodoList to a file
+- You can load your TodoList from a file 
 - For the grade input, the program does not crash if a non-integer value is inserted. 
 
 </p>

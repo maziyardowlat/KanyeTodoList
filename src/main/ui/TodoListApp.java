@@ -110,7 +110,7 @@ public class TodoListApp {
         }
     }
 
-    // EFFECTS: saves the workroom to file
+    // EFFECTS: saves the TodoList to file
     private void saveTodoList() {
         try {
             jsonWriter.open();

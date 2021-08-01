@@ -24,7 +24,7 @@ public class JsonReaderTest extends JsonTest{
     }
 
     @Test
-    void testReaderEmptyWorkRoom() {
+    void testReaderEmptyTodoList() {
         JsonReader reader = new JsonReader("./data/testTodoListEmpty.json");
         try {
             TodoList tl = reader.read();
