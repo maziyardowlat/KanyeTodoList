@@ -30,7 +30,7 @@ public class TodoListApp {
     //EFFECTS: initializes the todoList
     private void init() {
         input = new Scanner(System.in);
-        task1 = new Task("james", "Science 101", "738", "asdfasdf", 402);
+        task1 = new Task("task", "Science 101", "738", "asdfasdf", 402);
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
         list1 = new TodoList();
