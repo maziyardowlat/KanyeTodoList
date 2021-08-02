@@ -34,5 +34,22 @@ public class JsonReaderTest extends JsonTest{
         }
     }
 
+    @Test
+    void testGeneralTodoList() {
+        JsonReader reader = new JsonReader("./data/testTodoListGeneral.json");
+        try {
+            TodoList tl = reader.read();
+            TodoList todolist = new TodoList();
+            tl = reader.read();
+            List<Task> tasks = tl.getTasks();
+            todolist.addTask("Science", "asdf","asdf", "asdf", 92);
+            todolist.addTask("Math>", "asdf","asdf", "asdf", 92);
+            assertEquals(2, tasks.size());
+
+        } catch (IOException e) {
+            fail("Could not read from the given file");
+        }
+    }
+
 }
 
