@@ -30,7 +30,7 @@ public class TodoListApp {
     //EFFECTS: initializes the todoList
     private void init() {
         input = new Scanner(System.in);
-        task1 = new Task("task", "Science 101", "738", "asdfasdf", 402);
+        task1 = new Task("task", "Science 101", "738", "asdfasdf", "402");
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
         list1 = new TodoList();
@@ -150,7 +150,7 @@ public class TodoListApp {
             input.nextLine();
             System.out.println("Please Enter an Integer Instead");
         }
-        Integer grade = input.nextInt();
+        String grade = input.next();
         editor(name, title, dueDate, startDate, grade);
     }
 
@@ -166,7 +166,7 @@ public class TodoListApp {
 
     //MODIFIES: this
     //EFFECTS: adds a task to the list.
-    private void editor(String name, String title, String dueDate, String startDate, Integer grade) {
+    private void editor(String name, String title, String dueDate, String startDate, String grade) {
         list1.addTask(name, title, dueDate, startDate, grade);
     }
 

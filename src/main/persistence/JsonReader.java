@@ -62,7 +62,7 @@ public class JsonReader {
         String title = jsonObject.getString("title");
         String dueDate = jsonObject.getString("dueDate");
         String startDate = jsonObject.getString("startDate");
-        Integer grade = jsonObject.getInt("grade");
+        String grade = jsonObject.getString("grade");
         tl.addTask(name, title, dueDate, startDate, grade);
     }
 }

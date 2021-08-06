@@ -10,7 +10,6 @@ public class ListLayout extends JPanel {
         layout.setVgap(5);
 
         this.setLayout(layout);
-        this.setBackground(Color.blue);
 
     }
 }

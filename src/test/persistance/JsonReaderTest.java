@@ -42,8 +42,8 @@ public class JsonReaderTest extends JsonTest{
             TodoList todolist = new TodoList();
             tl = reader.read();
             List<Task> tasks = tl.getTasks();
-            todolist.addTask("Science", "asdf","asdf", "asdf", 92);
-            todolist.addTask("Math", "asdf","asdf", "asdf", 92);
+            todolist.addTask("Science", "asdf","asdf", "asdf", "92");
+            todolist.addTask("Math", "asdf","asdf", "asdf", "92");
             assertEquals(2, tasks.size());
 
         } catch (IOException e) {
