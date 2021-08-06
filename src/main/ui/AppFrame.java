@@ -22,7 +22,8 @@ public class AppFrame extends JFrame {
     private TodoList todoList;
     private TodoListApp listy;
     private Task taske;
-    private Image img;
+    private ImageIcon kanye;
+    JLabel label;
     private DefaultListModel<Task> taskyyyy;
 
     private JsonWriter jsonWriter;
@@ -43,11 +44,21 @@ public class AppFrame extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
 
+
         title = new TitleBar();
         list1 = new ListLayout();
         btnPanel = new ButtonPanel();
         todoList = new TodoList();
         taskyyyy = new DefaultListModel<>();
+        kanye = new ImageIcon("./data/Kanye.jpg");
+
+//        label = new JLabel();
+//        label.addMouseListener(this);
+//
+//        label.setIcon(kanye);
+//        this.add(label);
+
+
         taske = new Task("asdf", "asdf", "asdf", "asdf", "92");
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
@@ -79,6 +90,7 @@ public class AppFrame extends JFrame {
                     @Override
                     public void mousePressed(MouseEvent e) {
                         task.changeState();
+//                        label.setIcon(kanye);
 
                         revalidate();
                     }
