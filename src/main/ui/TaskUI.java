@@ -22,6 +22,7 @@ public class TaskUI extends JPanel {
     private JButton load;
     private JButton save;
     private TodoList todo;
+    private JButton doit;
     private Task task;
     private JList<Task> list;
     private DefaultListModel<Task> taskydefault;
@@ -81,6 +82,15 @@ public class TaskUI extends JPanel {
         save.setPreferredSize(new Dimension(40, 20));
         this.add(save, BorderLayout.EAST);
 
+        doit = new JButton("remove");
+        doit.setPreferredSize(new Dimension(40, 20));
+        this.add(doit, BorderLayout.EAST);
+
+        doit.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                removeTask();
+            }
+        });
 
 
         save.addMouseListener(new MouseAdapter() {
@@ -89,6 +99,8 @@ public class TaskUI extends JPanel {
                 taskFunction();
             }
         });
+
+
 
 
     }
@@ -144,7 +156,23 @@ public class TaskUI extends JPanel {
         taskydefault.addElement(task);
         this.add(list, BorderLayout.CENTER);
         todo.addTask(name, title, dueDate, startDate, grades);
+        list.setBackground(Color.red);
 
+
+    }
+
+    public void removeTask() {
+        String name = taskName.getText();
+        String title = taskTitle.getText();
+        String dueDate = taskDueDate.getText();
+        String grades = taskGrades.getText();
+        String startDate = taskStartDate.getText();
+        task = new Task(name, title, dueDate, startDate, grades);
+
+        list = new JList<>(taskydefault);
+        taskydefault.addElement(task);
+        this.add(list, BorderLayout.CENTER);
+        todo.removeTask(name, title);
         list.setBackground(Color.red);
 
 

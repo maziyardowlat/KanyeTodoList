@@ -1,30 +1,7 @@
-{"tasks": [
-    {
-        "dueDate": "Tomorrow",
-        "grade": "92",
-        "name": "Math",
-        "title": "Science",
-        "startDate": "Today"
-    },
-    {
-        "dueDate": "Tomorrow",
-        "grade": "91",
-        "name": "Science",
-        "title": "Test",
-        "startDate": "Afternoon"
-    },
-    {
-        "dueDate": "Spiderman",
-        "grade": "91",
-        "name": "Batman",
-        "title": "Home",
-        "startDate": "RTightNow"
-    },
-    {
-        "dueDate": "asdf",
-        "grade": "91",
-        "name": "asdf",
-        "title": "asdf",
-        "startDate": "asdf"
-    }
-]}
+{"tasks": [{
+    "dueDate": "asdfsadf",
+    "grade": "92",
+    "name": "Douye",
+    "title": "mamama",
+    "startDate": "asdfsadf"
+}]}
