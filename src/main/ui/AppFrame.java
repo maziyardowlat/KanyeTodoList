@@ -45,20 +45,11 @@ public class AppFrame extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
 
-
         title = new TitleBar();
         list1 = new ListLayout();
         btnPanel = new ButtonPanel();
         todoList = new TodoList();
         taskyyyy = new DefaultListModel<>();
-        kanye = new ImageIcon("./data/Kanye.jpg");
-
-        label = new JLabel();
-//        label.addMouseListener(this);
-
-        label.setIcon(kanye);
-        this.add(label);
-
 
         taske = new Task("asdf", "asdf", "asdf", "asdf", "92");
         jsonWriter = new JsonWriter(JSON_STORE);
@@ -73,8 +64,10 @@ public class AppFrame extends JFrame {
         loadTask = btnPanel.getLoadTask();
         showTask = btnPanel.getShowTask();
 
-
         addListners();
+        addRemover();
+        addSaver();
+        addLoad();
 
     }
 
@@ -99,8 +92,9 @@ public class AppFrame extends JFrame {
                 revalidate();
             }
         });
+    }
 
-
+    public void addRemover() {
         removeTask.addMouseListener(new MouseAdapter() {
 
             @Override
@@ -110,50 +104,49 @@ public class AppFrame extends JFrame {
                 revalidate();
             }
         });
+    }
 
+    public void addSaver() {
         savedTask.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
                 TaskUI task = new TaskUI(todoList, taskyyyy);
-                    try {
-                        jsonWriter.open();
-                        jsonWriter.write(todoList);
-                        jsonWriter.close();
-                        System.out.println("Saved " + taske.getName() + " to " + JSON_STORE);
-                    } catch (FileNotFoundException f) {
-                        System.out.println("Unable to write to file: " + JSON_STORE);
-                    }
+                try {
+                    jsonWriter.open();
+                    jsonWriter.write(todoList);
+                    jsonWriter.close();
+                    System.out.println("Saved " + taske.getName() + " to " + JSON_STORE);
+                } catch (FileNotFoundException f) {
+                    System.out.println("Unable to write to file: " + JSON_STORE);
                 }
-            });
+            }
+        });
+    }
 
+    public void addLoad() {
         loadTask.addMouseListener(new MouseAdapter() {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                    try {
-                        todoList = jsonReader.read();
-                    } catch (IOException f) {
-                        System.out.println("Unable to read from file: " + JSON_STORE);
-                    }
+                try {
+                    todoList = jsonReader.read();
+                } catch (IOException f) {
+                    System.out.println("Unable to read from file: " + JSON_STORE);
                 }
-            });
+            }
+        });
 
         AppFrame that = this;
         showTask.addMouseListener(new MouseAdapter() {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                System.out.println("asdfasdfasdf");
                 if (todoList.getTasks().size() > 0) {
-                    System.out.println("HELOOOOOOOO");
                     for (int i = 0; i < todoList.getTasks().size(); i++) {
-                        System.out.println("KANYE");
                         Task task = todoList.getTasks().get(i);
                         TaskUI asdf = new TaskUI(task);
                         that.add(asdf);
                     }
-//                } else {
-//                    printSad(task1);
                 }
             }
         });
