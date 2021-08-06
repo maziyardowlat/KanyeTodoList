@@ -1,5 +1,6 @@
 package ui;
 
+import model.Task;
 import model.TodoList;
 
 import javax.swing.*;
@@ -75,16 +76,9 @@ public class AppFrame extends JFrame {
         });
 
         savedTask.addMouseListener(new MouseAdapter() {
-            /**
-             * {@inheritDoc}
-             *
-             * @param e
-             */
             @Override
             public void mousePressed(MouseEvent e) {
                 TaskUI task = new TaskUI();
-                TodoListApp listy = new TodoListApp();
-                listy.save
             }
         });
     }

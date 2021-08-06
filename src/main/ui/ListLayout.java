@@ -12,4 +12,5 @@ public class ListLayout extends JPanel {
         this.setLayout(layout);
 
     }
+
 }

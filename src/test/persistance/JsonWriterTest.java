@@ -47,8 +47,8 @@ public class JsonWriterTest extends JsonTest{
     void testWriterGeneralTodoList() {
         try {
             TodoList tl = new TodoList();
-            tl.addTask("Science", "asdf","asdf", "asdf", "92");
-            tl.addTask("Math", "asdf","asdf", "asdf", "92");
+            tl.addTask("Science", "asdf","asdf", "asdf", 92);
+            tl.addTask("Math", "asdf","asdf", "asdf", 92);
             JsonWriter writer = new JsonWriter("./data/testTodoListGeneral.json");
             writer.open();
             writer.write(tl);

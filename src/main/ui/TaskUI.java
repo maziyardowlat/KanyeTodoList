@@ -24,7 +24,7 @@ public class TaskUI extends JPanel {
 
     TaskUI() {
         this.setPreferredSize(new Dimension(40,20));
-        this.setBackground(Color.black);
+        this.setBackground(Color.white);
         this.setLayout(new BorderLayout());
         checked = false;
         index = new JLabel("");
@@ -38,20 +38,7 @@ public class TaskUI extends JPanel {
         taskStartDate = new JTextField("Your Task Start Date here");
         taskGrades = new JTextField("Your Grade here");
 
-        String name = taskName.getName();
-        String title = taskTitle.getName();
-        String dueDate = taskDueDate.getName();
-        String grades = taskGrades.getName();
-        String startDate = taskStartDate.getName();
-        task = new Task(name, title, dueDate, startDate, grades);
-
-        DefaultListModel<Task> listModel = new DefaultListModel<>();
-        list = new JList<>(listModel);
-        listModel.addElement(task);
-
         taskName.setBackground(Color.red);
-
-        this.add(list, BorderLayout.CENTER);
 
         done = new JButton("done");
         done.setPreferredSize(new Dimension(40, 20));
@@ -59,7 +46,25 @@ public class TaskUI extends JPanel {
 
     }
 
+    public void taskFunction() {
+        String name = taskName.getName();
+        String title = taskTitle.getName();
+        String dueDate = taskDueDate.getName();
+        String grades = taskGrades.getName();
+        String startDate = taskStartDate.getName();
+        Integer realGrades = Integer.parseInt(grades);
+        task = new Task(name, title, dueDate, startDate, realGrades);
 
+        DefaultListModel<Task> listModel = new DefaultListModel<>();
+        list = new JList<>(listModel);
+        listModel.addElement(task);
+
+        this.add(list, BorderLayout.CENTER);
+
+
+        list.setBackground(Color.red);
+
+    }
 
     public JButton getDone() {
         return done;
@@ -70,7 +75,6 @@ public class TaskUI extends JPanel {
         taskName.setBackground(Color.green);
         checked = true;
     }
-
 
 
 }

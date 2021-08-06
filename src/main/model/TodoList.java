@@ -22,7 +22,7 @@ public class TodoList implements Writable {
 
     //MODIFIES: this
     //EFFECTS: adds a new task to the todolist
-    public void addTask(String name, String title, String dueDate, String startDate, String grade) {
+    public void addTask(String name, String title, String dueDate, String startDate, Integer grade) {
         Task task1 = new Task(name, title, dueDate, startDate, grade);
         tasks.add(task1);
     }
