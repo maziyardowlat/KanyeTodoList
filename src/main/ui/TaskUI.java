@@ -19,6 +19,7 @@ public class TaskUI extends JPanel {
     private JTextField taskStartDate;
     private JTextField taskGrades;
     private JButton done;
+    private JButton load;
     private JButton save;
     private TodoList todo;
     private Task task;
@@ -81,12 +82,15 @@ public class TaskUI extends JPanel {
         this.add(save, BorderLayout.EAST);
 
 
+
         save.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
                 taskFunction();
             }
         });
+
+
     }
 
     TaskUI(Task task) {
@@ -101,27 +105,27 @@ public class TaskUI extends JPanel {
         index.setHorizontalAlignment(JLabel.CENTER);
         this.add(index, BorderLayout.WEST);
 
-        taskName = new JTextField("Your Class Name here");
+        taskName = new JTextField(task.getName());
         taskName.setPreferredSize(new Dimension(20, 20));
         taskName.setHorizontalAlignment(JLabel.CENTER);
         this.add(taskName, BorderLayout.NORTH);
 
-        taskTitle = new JTextField("Your Task here");
+        taskTitle = new JTextField(task.getTitle());
         taskName.setPreferredSize(new Dimension(20, 20));
         taskName.setHorizontalAlignment(JLabel.CENTER);
         this.add(taskTitle, BorderLayout.CENTER);
 
-        taskDueDate = new JTextField("Your Task Due Date here");
+        taskDueDate = new JTextField(task.getDueDate());
         taskDueDate.setPreferredSize(new Dimension(20, 20));
         taskDueDate.setHorizontalAlignment(JLabel.CENTER);
         this.add(taskDueDate, BorderLayout.CENTER);
 
-        taskStartDate = new JTextField("Your Task Start Date here");
+        taskStartDate = new JTextField(task.getStartDate());
         taskStartDate.setPreferredSize(new Dimension(20, 20));
         taskStartDate.setHorizontalAlignment(JLabel.CENTER);
         this.add(taskStartDate, BorderLayout.CENTER);
 
-        taskGrades = new JTextField("Your Grade here");
+        taskGrades = new JTextField(task.getGrade());
         taskGrades.setPreferredSize(new Dimension(20, 20));
         taskGrades.setHorizontalAlignment(JLabel.CENTER);
         this.add(taskGrades, BorderLayout.SOUTH);

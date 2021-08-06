@@ -1,14 +1,14 @@
 {"tasks": [
     {
         "dueDate": "asdf",
-        "grade": 92,
+        "grade": "92",
         "name": "Science",
         "title": "asdf",
         "startDate": "asdf"
     },
     {
         "dueDate": "asdf",
-        "grade": 92,
+        "grade": "92",
         "name": "Math",
         "title": "asdf",
         "startDate": "asdf"

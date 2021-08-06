@@ -125,6 +125,7 @@ public class AppFrame extends JFrame {
                 }
             });
 
+        AppFrame that = this;
         showTask.addMouseListener(new MouseAdapter() {
 
             @Override
@@ -136,14 +137,13 @@ public class AppFrame extends JFrame {
                         System.out.println("KANYE");
                         Task taskyeye = todoList.getTasks().get(i);
                         TaskUI asdf = new TaskUI(taskyeye);
+                        that.add(asdf);
                     }
 //                } else {
 //                    printSad(task1);
                 }
             }
         });
-
-
 
     }
 }
