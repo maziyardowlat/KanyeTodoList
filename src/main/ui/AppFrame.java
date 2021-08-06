@@ -6,10 +6,12 @@ import model.TodoList;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -51,11 +53,11 @@ public class AppFrame extends JFrame {
         taskyyyy = new DefaultListModel<>();
         kanye = new ImageIcon("./data/Kanye.jpg");
 
-//        label = new JLabel();
+        label = new JLabel();
 //        label.addMouseListener(this);
-//
-//        label.setIcon(kanye);
-//        this.add(label);
+
+        label.setIcon(kanye);
+        this.add(label);
 
 
         taske = new Task("asdf", "asdf", "asdf", "asdf", "92");
@@ -89,7 +91,7 @@ public class AppFrame extends JFrame {
                     @Override
                     public void mousePressed(MouseEvent e) {
                         task.changeState();
-//                        label.setIcon(kanye);
+                        paintComponent(getGraphics());
 
                         revalidate();
                     }
@@ -155,6 +157,17 @@ public class AppFrame extends JFrame {
                 }
             }
         });
+    }
 
+    public void paintComponent(Graphics g) {
+        super.paint(g);
+        Image backgroundImage;
+         // Draw the background image
+        try {
+            backgroundImage = ImageIO.read(new File("./data/Kanye.jpg"));
+            g.drawImage(backgroundImage, 0, 0, this);
+        } catch (IOException ioException) {
+            System.out.println("Exception!!!!!");
+        }
     }
 }

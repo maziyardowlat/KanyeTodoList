@@ -105,9 +105,6 @@ public class TaskUI extends JPanel {
             }
         });
 
-
-
-
     }
 
     TaskUI(Task task) {
@@ -179,10 +176,7 @@ public class TaskUI extends JPanel {
         this.add(list, BorderLayout.CENTER);
         todo.removeTask(name, title);
         list.setBackground(Color.red);
-
-
     }
-
 
     public JButton getDone() {
         return done;
