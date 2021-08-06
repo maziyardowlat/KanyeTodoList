@@ -9,6 +9,7 @@ public class ButtonPanel extends JPanel {
     private JButton removeTask;
     private JButton saveTask;
     private JButton loadTask;
+    private JButton showTask;
 
     Border emptyBorder = BorderFactory.createEmptyBorder();
 
@@ -38,6 +39,9 @@ public class ButtonPanel extends JPanel {
         loadTask.setFont(new Font("Sans-serif", Font.PLAIN, 20));
         this.add(loadTask);
 
+        showTask = new JButton("Show Task");
+        showTask.setFont(new Font("Sans-serif", Font.PLAIN, 20));
+        this.add(showTask);
 
     }
 
@@ -55,5 +59,9 @@ public class ButtonPanel extends JPanel {
 
     public JButton getLoadTask() {
         return loadTask;
+    }
+
+    public JButton getShowTask() {
+        return showTask;
     }
 }

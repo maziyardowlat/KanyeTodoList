@@ -1,6 +1,7 @@
 package ui;
 
 import model.Task;
+import model.TodoList;
 import sun.jvm.hotspot.types.JIntField;
 
 import javax.swing.*;
@@ -19,19 +20,22 @@ public class TaskUI extends JPanel {
     private JTextField taskGrades;
     private JButton done;
     private JButton save;
+    private TodoList todo;
     private Task task;
     private JList<Task> list;
-
+    private DefaultListModel<Task> taskydefault;
 
     private boolean checked;
     //Constructor
 
-    TaskUI() {
+    TaskUI(TodoList toddie, DefaultListModel<Task> defaultmodel) {
 
         GridLayout experimentLayout = new GridLayout(0, 1);
         this.setPreferredSize(new Dimension(40,20));
         this.setBackground(Color.white);
         this.setLayout(new GridLayout());
+        this.todo = toddie;
+        this.taskydefault = defaultmodel;
 
         checked = false;
         index = new JLabel("");
@@ -83,29 +87,61 @@ public class TaskUI extends JPanel {
                 taskFunction();
             }
         });
-
     }
 
+    TaskUI(Task task) {
+        GridLayout experimentLayout = new GridLayout(0, 1);
+        this.setPreferredSize(new Dimension(40,20));
+        this.setBackground(Color.white);
+        this.setLayout(new GridLayout());
+
+        checked = false;
+        index = new JLabel("");
+        index.setPreferredSize(new Dimension(20, 20));
+        index.setHorizontalAlignment(JLabel.CENTER);
+        this.add(index, BorderLayout.WEST);
+
+        taskName = new JTextField("Your Class Name here");
+        taskName.setPreferredSize(new Dimension(20, 20));
+        taskName.setHorizontalAlignment(JLabel.CENTER);
+        this.add(taskName, BorderLayout.NORTH);
+
+        taskTitle = new JTextField("Your Task here");
+        taskName.setPreferredSize(new Dimension(20, 20));
+        taskName.setHorizontalAlignment(JLabel.CENTER);
+        this.add(taskTitle, BorderLayout.CENTER);
+
+        taskDueDate = new JTextField("Your Task Due Date here");
+        taskDueDate.setPreferredSize(new Dimension(20, 20));
+        taskDueDate.setHorizontalAlignment(JLabel.CENTER);
+        this.add(taskDueDate, BorderLayout.CENTER);
+
+        taskStartDate = new JTextField("Your Task Start Date here");
+        taskStartDate.setPreferredSize(new Dimension(20, 20));
+        taskStartDate.setHorizontalAlignment(JLabel.CENTER);
+        this.add(taskStartDate, BorderLayout.CENTER);
+
+        taskGrades = new JTextField("Your Grade here");
+        taskGrades.setPreferredSize(new Dimension(20, 20));
+        taskGrades.setHorizontalAlignment(JLabel.CENTER);
+        this.add(taskGrades, BorderLayout.SOUTH);
+    }
+
+
     public void taskFunction() {
-        String name = taskName.getName();
-        String title = taskTitle.getName();
-        String dueDate = taskDueDate.getName();
-        String grades = taskGrades.getName();
-        String startDate = taskStartDate.getName();
-        int realGrades = Integer.parseInt(grades);
-        task = new Task(name, title, dueDate, startDate, realGrades);
+        String name = taskName.getText();
+        String title = taskTitle.getText();
+        String dueDate = taskDueDate.getText();
+        String grades = taskGrades.getText();
+        String startDate = taskStartDate.getText();
+        task = new Task(name, title, dueDate, startDate, grades);
 
-        DefaultListModel<Task> listModel = new DefaultListModel<>();
-        list = new JList<>(listModel);
-        listModel.addElement(task);
-
+        list = new JList<>(taskydefault);
+        taskydefault.addElement(task);
         this.add(list, BorderLayout.CENTER);
-
-
+        todo.addTask(name, title, dueDate, startDate, grades);
 
         list.setBackground(Color.red);
-
-
 
 
     }
@@ -121,7 +157,9 @@ public class TaskUI extends JPanel {
         checked = true;
     }
 
-
+    public TodoList getTodo() {
+        return todo;
+    }
 
 
 }

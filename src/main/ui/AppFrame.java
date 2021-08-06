@@ -23,6 +23,7 @@ public class AppFrame extends JFrame {
     private TodoListApp listy;
     private Task taske;
     private Image img;
+    private DefaultListModel<Task> taskyyyy;
 
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
@@ -34,6 +35,7 @@ public class AppFrame extends JFrame {
     private JButton removeTask;
     private JButton savedTask;
     private JButton loadTask;
+    private JButton showTask;
 
     AppFrame() {
 
@@ -45,7 +47,8 @@ public class AppFrame extends JFrame {
         list1 = new ListLayout();
         btnPanel = new ButtonPanel();
         todoList = new TodoList();
-        taske = new Task("asdf", "asdf", "asdf", "asdf", 92);
+        taskyyyy = new DefaultListModel<>();
+        taske = new Task("asdf", "asdf", "asdf", "asdf", "92");
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
         this.add(title, BorderLayout.NORTH);
@@ -56,6 +59,7 @@ public class AppFrame extends JFrame {
         removeTask = btnPanel.getRemoveTask();
         savedTask = btnPanel.getSaveTask();
         loadTask = btnPanel.getLoadTask();
+        showTask = btnPanel.getShowTask();
 
 
         addListners();
@@ -67,7 +71,7 @@ public class AppFrame extends JFrame {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                TaskUI task = new TaskUI();
+                TaskUI task = new TaskUI(todoList, taskyyyy);
                 list1.add(task);
 
                 task.getDone().addMouseListener(new MouseAdapter() {
@@ -88,7 +92,7 @@ public class AppFrame extends JFrame {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                TaskUI task = new TaskUI();
+                TaskUI task = new TaskUI(todoList, taskyyyy);
                 list1.remove(task);
                 revalidate();
             }
@@ -97,7 +101,7 @@ public class AppFrame extends JFrame {
         savedTask.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                TaskUI task = new TaskUI();
+                TaskUI task = new TaskUI(todoList, taskyyyy);
                     try {
                         jsonWriter.open();
                         jsonWriter.write(todoList);
@@ -113,7 +117,7 @@ public class AppFrame extends JFrame {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                TaskUI task = new TaskUI();
+                TaskUI task = new TaskUI(todoList, taskyyyy);
                     try {
                         todoList = jsonReader.read();
                     } catch (IOException f) {
@@ -121,6 +125,24 @@ public class AppFrame extends JFrame {
                     }
                 }
             });
+
+        showTask.addMouseListener(new MouseAdapter() {
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                TaskUI task = new TaskUI(todoList, taskyyyy);
+                if (todoList.getTasks().size() > 0) {
+                    for (int i = 0; i < todoList.getTasks().size(); i++) {
+                        Task taskyeye = todoList.getTasks().get(i);
+                        TaskUI asdf = new TaskUI(taskyeye);
+                    }
+//                } else {
+//                    printSad(task1);
+                }
+            }
+        });
+
+
 
     }
 }
