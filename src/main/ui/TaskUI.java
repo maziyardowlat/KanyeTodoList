@@ -72,6 +72,11 @@ public class TaskUI extends JPanel {
 
 
         taskName.setBackground(Color.red);
+        taskTitle.setBackground(Color.red);
+        taskGrades.setBackground(Color.cyan);
+        taskStartDate.setBackground(Color.cyan);
+        taskDueDate.setBackground(Color.cyan);
+
 
         done = new JButton("done");
         done.setPreferredSize(new Dimension(40, 20));

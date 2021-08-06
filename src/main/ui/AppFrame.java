@@ -13,17 +13,16 @@ import java.awt.event.MouseEvent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-// Heavy inspiration was taken from this video
-// https://www.youtube.com/watch?v=BQXjF7tw_MQ&t=1369s
+// SOme tips were taken from this video, but no actual foncunality other than the done button has been heavily inspired
+// from this video https://www.youtube.com/watch?v=BQXjF7tw_MQ&t=1369s
 public class AppFrame extends JFrame {
     private TitleBar title;
     private ListLayout list1;
     private ButtonPanel btnPanel;
     private TodoList todoList;
-    private TodoListApp listy;
     private Task taske;
     private ImageIcon kanye;
-    JLabel label;
+    private JLabel label;
     private DefaultListModel<Task> taskyyyy;
 
     private JsonWriter jsonWriter;
@@ -147,8 +146,8 @@ public class AppFrame extends JFrame {
                     System.out.println("HELOOOOOOOO");
                     for (int i = 0; i < todoList.getTasks().size(); i++) {
                         System.out.println("KANYE");
-                        Task taskyeye = todoList.getTasks().get(i);
-                        TaskUI asdf = new TaskUI(taskyeye);
+                        Task task = todoList.getTasks().get(i);
+                        TaskUI asdf = new TaskUI(task);
                         that.add(asdf);
                     }
 //                } else {
