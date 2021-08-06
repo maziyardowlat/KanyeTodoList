@@ -92,7 +92,7 @@ public class TaskUI extends JPanel {
     TaskUI(Task task) {
         GridLayout experimentLayout = new GridLayout(0, 1);
         this.setPreferredSize(new Dimension(40,20));
-        this.setBackground(Color.white);
+        this.setBackground(Color.black);
         this.setLayout(new GridLayout());
 
         checked = false;

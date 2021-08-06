@@ -117,7 +117,6 @@ public class AppFrame extends JFrame {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                TaskUI task = new TaskUI(todoList, taskyyyy);
                     try {
                         todoList = jsonReader.read();
                     } catch (IOException f) {
@@ -130,9 +129,11 @@ public class AppFrame extends JFrame {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                TaskUI task = new TaskUI(todoList, taskyyyy);
+                System.out.println("asdfasdfasdf");
                 if (todoList.getTasks().size() > 0) {
+                    System.out.println("HELOOOOOOOO");
                     for (int i = 0; i < todoList.getTasks().size(); i++) {
+                        System.out.println("KANYE");
                         Task taskyeye = todoList.getTasks().get(i);
                         TaskUI asdf = new TaskUI(taskyeye);
                     }
