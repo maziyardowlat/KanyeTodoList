@@ -6,7 +6,6 @@ import java.awt.*;
 
 public class ButtonPanel extends JPanel {
     private JButton addTask;
-    private JButton removeTask;
     private JButton saveTask;
     private JButton loadTask;
     private JButton showTask;
@@ -20,12 +19,6 @@ public class ButtonPanel extends JPanel {
         addTask.setFont(new Font("Sans-serif", Font.PLAIN, 20));
         this.add(addTask);
         this.setBackground(Color.red);
-
-        this.add(Box.createHorizontalStrut(20));
-
-        removeTask = new JButton("Remove A Task");
-        removeTask.setFont(new Font("Sans-serif", Font.PLAIN, 20));
-        this.add(removeTask);
 
         this.add(Box.createHorizontalStrut(20));
 
@@ -49,9 +42,6 @@ public class ButtonPanel extends JPanel {
         return addTask;
     }
 
-    public JButton getRemoveTask() {
-        return removeTask;
-    }
 
     public JButton getSaveTask() {
         return saveTask;

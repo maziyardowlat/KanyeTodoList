@@ -59,13 +59,11 @@ public class AppFrame extends JFrame {
         this.add(list1, BorderLayout.CENTER);
 
         addTask = btnPanel.getAddTask();
-        removeTask = btnPanel.getRemoveTask();
         savedTask = btnPanel.getSaveTask();
         loadTask = btnPanel.getLoadTask();
         showTask = btnPanel.getShowTask();
 
         addListners();
-        addRemover();
         addSaver();
         addLoad();
 
@@ -94,17 +92,6 @@ public class AppFrame extends JFrame {
         });
     }
 
-    public void addRemover() {
-        removeTask.addMouseListener(new MouseAdapter() {
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-                TaskUI task = new TaskUI(todoList, taskyyyy);
-                list1.remove(task);
-                revalidate();
-            }
-        });
-    }
 
     public void addSaver() {
         savedTask.addMouseListener(new MouseAdapter() {
