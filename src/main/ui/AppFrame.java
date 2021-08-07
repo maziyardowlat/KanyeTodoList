@@ -40,7 +40,7 @@ public class AppFrame extends JFrame {
 
     AppFrame() {
 
-        this.setSize(400, 700);
+        this.setSize(300, 600);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
 
@@ -132,6 +132,7 @@ public class AppFrame extends JFrame {
                         Task task = todoList.getTasks().get(i);
                         TaskUI asdf = new TaskUI(task);
                         that.add(asdf);
+
                     }
                 }
             }
