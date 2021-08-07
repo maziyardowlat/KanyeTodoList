@@ -18,7 +18,7 @@ draw of this app.
 
 - As a user, I want to be able to add a task to my todo-list
 - As a user, I want to be able to remove a task from my todo-list
-- As a user, I am able to view the tasks on my todo-list 
+- As a user, I am able to view the added tasks on my todo-list 
 - As a user, I want to be able to add a specific start date, name, and title to my task
 - As a user, I want to be able to add a specific targetted time (date) that I want to finish the task under
 - As a user, I want to be able to save my TodoList to a file 
@@ -30,7 +30,7 @@ draw of this app.
 
 - You can add a number of tasks to the todo-List
 - You can remove any number of tasks from the list, assuming there exist correspinding todo-tasks 
-- You can view all of the tasks that have been added to the todo-list at any moment
+- You can view the tasks that have been added to the todo-list 
 - You can add a specific start date, name, title to any todo-item for further clarification
 - You can add a specific end date to a task item. 
 - You can add a grade to the todo-item, which is displayed seperatley than the todo-item, which will get further 
