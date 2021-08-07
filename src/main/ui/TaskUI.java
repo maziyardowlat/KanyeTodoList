@@ -38,8 +38,28 @@ public class TaskUI extends JPanel {
         this.setLayout(new GridLayout());
         this.todo = toddie;
         this.taskydefault = defaultmodel;
-
         checked = false;
+        taskName();
+        taskStartDate();
+
+
+        doit.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                removeTask();
+            }
+        });
+
+
+        save.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                taskFunction();
+            }
+        });
+
+    }
+
+    public void taskName() {
         index = new JLabel("");
         index.setPreferredSize(new Dimension(20, 20));
         index.setHorizontalAlignment(JLabel.CENTER);
@@ -60,6 +80,10 @@ public class TaskUI extends JPanel {
         taskDueDate.setHorizontalAlignment(JLabel.CENTER);
         this.add(taskDueDate, BorderLayout.CENTER);
 
+
+    }
+
+    public void taskStartDate() {
         taskStartDate = new JTextField("Your Task Start Date here");
         taskStartDate.setPreferredSize(new Dimension(20, 20));
         taskStartDate.setHorizontalAlignment(JLabel.CENTER);
@@ -69,14 +93,6 @@ public class TaskUI extends JPanel {
         taskGrades.setPreferredSize(new Dimension(20, 20));
         taskGrades.setHorizontalAlignment(JLabel.CENTER);
         this.add(taskGrades, BorderLayout.SOUTH);
-
-
-        taskName.setBackground(Color.red);
-        taskTitle.setBackground(Color.red);
-        taskGrades.setBackground(Color.cyan);
-        taskStartDate.setBackground(Color.cyan);
-        taskDueDate.setBackground(Color.cyan);
-
 
         done = new JButton("done");
         done.setPreferredSize(new Dimension(40, 20));
@@ -91,19 +107,11 @@ public class TaskUI extends JPanel {
         doit.setPreferredSize(new Dimension(40, 20));
         this.add(doit, BorderLayout.EAST);
 
-        doit.addMouseListener(new MouseAdapter() {
-            public void mousePressed(MouseEvent e) {
-                removeTask();
-            }
-        });
-
-
-        save.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mousePressed(MouseEvent e) {
-                taskFunction();
-            }
-        });
+        taskName.setBackground(Color.red);
+        taskTitle.setBackground(Color.red);
+        taskGrades.setBackground(Color.cyan);
+        taskStartDate.setBackground(Color.cyan);
+        taskDueDate.setBackground(Color.cyan);
 
     }
 
@@ -119,6 +127,12 @@ public class TaskUI extends JPanel {
         index.setHorizontalAlignment(JLabel.CENTER);
         this.add(index, BorderLayout.WEST);
 
+        taskGetters();
+
+
+    }
+
+    public void taskGetters() {
         taskName = new JTextField(task.getName());
         taskName.setPreferredSize(new Dimension(20, 20));
         taskName.setHorizontalAlignment(JLabel.CENTER);
@@ -159,7 +173,6 @@ public class TaskUI extends JPanel {
         this.add(list, BorderLayout.CENTER);
         todo.addTask(name, title, dueDate, startDate, grades);
         list.setBackground(Color.red);
-
 
     }
 
