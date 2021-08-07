@@ -1,6 +1,5 @@
 package ui;
 
-import com.sun.tools.javac.comp.Todo;
 import model.Task;
 import model.TodoList;
 import persistence.JsonReader;

@@ -2,7 +2,6 @@ package ui;
 
 import model.Task;
 import model.TodoList;
-import sun.jvm.hotspot.types.JIntField;
 
 import javax.swing.*;
 import java.awt.*;
