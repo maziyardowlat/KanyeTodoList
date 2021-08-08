@@ -33,7 +33,6 @@ public class AppFrame extends JFrame {
 
 
     private JButton addTask;
-    private JButton removeTask;
     private JButton savedTask;
     private JButton loadTask;
     private JButton showTask;
@@ -102,6 +101,9 @@ public class AppFrame extends JFrame {
                     jsonWriter.write(todoList);
                     jsonWriter.close();
                     System.out.println("Saved " + taske.getName() + " to " + JSON_STORE);
+                    revalidate();
+                    removePaint(getGraphics());
+                    revalidate();
                 } catch (FileNotFoundException f) {
                     System.out.println("Unable to write to file: " + JSON_STORE);
                 }
@@ -144,10 +146,23 @@ public class AppFrame extends JFrame {
         Image backgroundImage;
          // Draw the background image
         try {
-            backgroundImage = ImageIO.read(new File("./data/Kanye.jpg"));
+            backgroundImage = ImageIO.read(new File("./data/Unknown.jpg"));
             g.drawImage(backgroundImage, 0, 0, this);
         } catch (IOException ioException) {
             System.out.println("Exception!!!!!");
         }
     }
+
+    public void removePaint(Graphics g) {
+        super.paint(g);
+        Image backgroundImage;
+        // Draw the background image
+        try {
+            backgroundImage = ImageIO.read(new File("./data/Unknown.jpg"));
+            g.dispose();
+        } catch (IOException ioException) {
+            System.out.println("Exception!!!!!");
+        }
+    }
+
 }

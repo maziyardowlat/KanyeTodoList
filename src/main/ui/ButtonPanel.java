@@ -22,7 +22,7 @@ public class ButtonPanel extends JPanel {
 
         this.add(Box.createHorizontalStrut(20));
 
-        saveTask = new JButton("Save this Task");
+        saveTask = new JButton("Save this Task (Kanye will dissapear if this is successful)");
         saveTask.setFont(new Font("Sans-serif", Font.PLAIN, 20));
         this.add(saveTask);
 
