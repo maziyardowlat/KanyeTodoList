@@ -2,7 +2,6 @@ package ui;
 
 import model.Task;
 import model.TodoList;
-import sun.jvm.hotspot.types.JIntField;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,8 +27,8 @@ public class TaskUI extends JPanel {
     private DefaultListModel<Task> taskydefault;
 
     private boolean checked;
-    //Constructor
 
+    //Constructor
     TaskUI(TodoList toddie, DefaultListModel<Task> defaultmodel) {
         GridLayout experimentLayout = new GridLayout(0, 1);
         this.setPreferredSize(new Dimension(40,100));
@@ -62,6 +61,7 @@ public class TaskUI extends JPanel {
 
     }
 
+    //The TaskIndex, houses the indedx
     public void taskIndex() {
         index = new JLabel("");
         index.setPreferredSize(new Dimension(20, 20));
@@ -69,6 +69,7 @@ public class TaskUI extends JPanel {
         this.add(index, BorderLayout.WEST);
     }
 
+    //The TaskMethods, houses the input fields for the user
     public void taskMethods() {
 
         taskName = new JTextField("Your Class Name here");
@@ -98,6 +99,7 @@ public class TaskUI extends JPanel {
 
     }
 
+    //The different task colors which correspond to the different fields
     public void taskColors() {
         taskName.setBackground(Color.red);
         taskTitle.setBackground(Color.red);
@@ -106,6 +108,7 @@ public class TaskUI extends JPanel {
         taskDueDate.setBackground(Color.cyan);
     }
 
+    //The different taskButtons that appear beside the tasks
     public void taskButtons() {
         done = new JButton("done");
         done.setPreferredSize(new Dimension(40, 20));
@@ -121,6 +124,7 @@ public class TaskUI extends JPanel {
         this.add(doit, BorderLayout.EAST);
     }
 
+    //The constructor that is used when the
     TaskUI(Task task) {
         GridLayout experimentLayout = new GridLayout(0, 1);
 //        this.setPreferredSize(new Dimension(20,20));
@@ -157,6 +161,7 @@ public class TaskUI extends JPanel {
         this.add(taskGrades, BorderLayout.SOUTH);
     }
 
+    //The index that corersponds to the second TaskUI constructor, for the show task
     public void task2Index() {
         index = new JLabel("");
         index.setPreferredSize(new Dimension(20, 20));
@@ -166,6 +171,7 @@ public class TaskUI extends JPanel {
     }
 
 
+    //Gets the information from the input fields
     public void taskFunction() {
         String name = taskName.getText();
         String title = taskTitle.getText();
@@ -183,6 +189,7 @@ public class TaskUI extends JPanel {
 
     }
 
+    //Corresponds to the field for the removed task
     public void removeTask() {
         String name = taskName.getText();
         String title = taskTitle.getText();
@@ -202,6 +209,7 @@ public class TaskUI extends JPanel {
         return done;
     }
 
+    //Changes the state of the done button and the bar if done is clicked
     public void changeState() {
         this.setBackground(Color.green);
         taskName.setBackground(Color.green);

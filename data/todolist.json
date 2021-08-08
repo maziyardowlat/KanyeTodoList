@@ -1,16 +1,7 @@
-{"tasks": [
-    {
-        "dueDate": "Tomorrow",
-        "grade": "93",
-        "name": "Donda",
-        "title": "Weeknd",
-        "startDate": "Today"
-    },
-    {
-        "dueDate": "Your Task Due Date here",
-        "grade": "Your Grade here",
-        "name": "SPIDER",
-        "title": "asdfsdaf",
-        "startDate": "Your Task Start Date here"
-    }
-]}
+{"tasks": [{
+    "dueDate": "Your Task Due Date here",
+    "grade": "Your Grade here",
+    "name": "Task4",
+    "title": "Your Task here",
+    "startDate": "Your Task Start Date here"
+}]}

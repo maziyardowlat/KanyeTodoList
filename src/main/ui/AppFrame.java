@@ -37,6 +37,7 @@ public class AppFrame extends JFrame {
     private JButton loadTask;
     private JButton showTask;
 
+    //The app frame constructor, and adds several panels
     AppFrame() {
 
         this.setSize(300, 600);
@@ -67,6 +68,7 @@ public class AppFrame extends JFrame {
 
     }
 
+    //This button adds a new task to the list, as well functions for the done button
     public void addListners() {
         addTask.addMouseListener(new MouseAdapter() {
 
@@ -90,7 +92,7 @@ public class AppFrame extends JFrame {
         });
     }
 
-
+    //Saves the TodoList, and closes a picture of Kanye if it is successful
     public void addSaver() {
         savedTask.addMouseListener(new MouseAdapter() {
             @Override
@@ -111,6 +113,7 @@ public class AppFrame extends JFrame {
         });
     }
 
+    //Loads the wanted task, as well as the show task option
     public void addLoad() {
         loadTask.addMouseListener(new MouseAdapter() {
 
@@ -141,6 +144,7 @@ public class AppFrame extends JFrame {
         });
     }
 
+    //Adds a picture of Kanye to the todoList
     public void paintComponent(Graphics g) {
         super.paint(g);
         Image backgroundImage;
@@ -153,6 +157,7 @@ public class AppFrame extends JFrame {
         }
     }
 
+    //Remove the Picture of Kanye
     public void removePaint(Graphics g) {
         super.paint(g);
         Image backgroundImage;
