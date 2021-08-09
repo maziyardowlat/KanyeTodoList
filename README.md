@@ -46,3 +46,21 @@ realized when the GUI is integrated.
 - For the grade input, the program does not crash if a non-integer value is inserted. 
 
 </p>
+
+<p> Phase 3 Best way to Utilize the GUI
+
+1. If you have tasks saved, and you open the todoList but do not load the saved tasks in, adding new tasks
+overides the saved tasks, so be sure to do that first.
+2. To view all of the tasks, you need to play around with the UI a little bit. The best way to do it is to
+add a task, save it, close. then repoen, load the task and show it, then add a new task, save, then load and show 
+   and this will give you a panel that you can click on to see all of the saved tasks
+3. Similar to the save, if you do not load in the tasks from before
+4. To have the Image pop up, click on the done button and kanye will pop up
+5. The way to save the tasks is to input all the fields, then click the save button 
+at the level of the fields, then click the "Save This task Button"
+   
+6. The way to remove a task is similar, make sure the fields are the exact same as the task you are wanting to remove
+the enter it, then click the save button at the input level, then click remove and finally click "Save this task"
+
+
+</p>

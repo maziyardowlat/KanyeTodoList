@@ -16,6 +16,7 @@ import java.io.IOException;
 
 // SOme tips were taken from this video, but no actual foncunality other than the done button has been heavily inspired
 // from this video https://www.youtube.com/watch?v=BQXjF7tw_MQ&t=1369s
+
 public class AppFrame extends JFrame {
     private TitleBar title;
     private ListLayout list1;
