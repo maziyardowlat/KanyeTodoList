@@ -14,7 +14,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-// SOme tips were taken from this video, but no actual foncunality other than the done button has been heavily inspired
+// SOme tips were taken from this video, but no actual foncunality other than the done button
+// turning green, and the button display of the buttons has been  inspired
 // from this video https://www.youtube.com/watch?v=BQXjF7tw_MQ&t=1369s
 
 public class AppFrame extends JFrame {
@@ -69,7 +70,8 @@ public class AppFrame extends JFrame {
 
     }
 
-    //This button adds a new task to the list, as well functions for the done button
+    //MODIFIES: this, TodoList
+    //EFFECTS: This button adds a new task to the list, as well functions for the done button
     public void addListners() {
         addTask.addMouseListener(new MouseAdapter() {
 
@@ -93,7 +95,8 @@ public class AppFrame extends JFrame {
         });
     }
 
-    //Saves the TodoList, and closes a picture of Kanye if it is successful
+    //MODIFIES: this, TodoList
+    //EFFECTS: Saves the TodoList, and closes a picture of Kanye if it is successful
     public void addSaver() {
         savedTask.addMouseListener(new MouseAdapter() {
             @Override
@@ -114,7 +117,8 @@ public class AppFrame extends JFrame {
         });
     }
 
-    //Loads the wanted task, as well as the show task option
+    //MODIFIES: this, TodoList
+    //EFFECTS: Loads the wanted task, as well as the show task option
     public void addLoad() {
         loadTask.addMouseListener(new MouseAdapter() {
 
@@ -145,6 +149,7 @@ public class AppFrame extends JFrame {
         });
     }
 
+    //MODIFIES: this
     //Adds a picture of Kanye to the todoList
     public void paintComponent(Graphics g) {
         super.paint(g);
@@ -158,6 +163,7 @@ public class AppFrame extends JFrame {
         }
     }
 
+    //MODIFIES: this, AppFrame
     //Remove the Picture of Kanye
     public void removePaint(Graphics g) {
         super.paint(g);

@@ -61,7 +61,8 @@ public class TaskUI extends JPanel {
 
     }
 
-    //The TaskIndex, houses the indedx
+    //MODIFIES: this
+    //EFFECTS: The TaskIndex, houses the indedx
     public void taskIndex() {
         index = new JLabel("");
         index.setPreferredSize(new Dimension(20, 20));
@@ -69,7 +70,8 @@ public class TaskUI extends JPanel {
         this.add(index, BorderLayout.WEST);
     }
 
-    //The TaskMethods, houses the input fields for the user
+    //MODIFIES: this, task
+    //EFFECTS: The TaskMethods, houses the input fields for the user
     public void taskMethods() {
 
         taskName = new JTextField("Your Class Name here");
@@ -99,7 +101,7 @@ public class TaskUI extends JPanel {
 
     }
 
-    //The different task colors which correspond to the different fields
+    //EFFECTS: The different task colors which correspond to the different fields
     public void taskColors() {
         taskName.setBackground(Color.red);
         taskTitle.setBackground(Color.red);
@@ -108,6 +110,7 @@ public class TaskUI extends JPanel {
         taskDueDate.setBackground(Color.cyan);
     }
 
+    //MODIFIES: this
     //The different taskButtons that appear beside the tasks
     public void taskButtons() {
         done = new JButton("done");
@@ -124,6 +127,7 @@ public class TaskUI extends JPanel {
         this.add(doit, BorderLayout.EAST);
     }
 
+    //MODIFIES: this, Task
     //The constructor that is used when the
     TaskUI(Task task) {
         GridLayout experimentLayout = new GridLayout(0, 1);
@@ -161,7 +165,8 @@ public class TaskUI extends JPanel {
         this.add(taskGrades, BorderLayout.SOUTH);
     }
 
-    //The index that corersponds to the second TaskUI constructor, for the show task
+    //MODIFIES: this
+    //EFFECTS: The index that corersponds to the second TaskUI constructor, for the show task
     public void task2Index() {
         index = new JLabel("");
         index.setPreferredSize(new Dimension(20, 20));
@@ -170,8 +175,8 @@ public class TaskUI extends JPanel {
 
     }
 
-
-    //Gets the information from the input fields
+    //MODIFIES: this, TodoList
+    //EFFECTS: Gets the information from the input fields
     public void taskFunction() {
         String name = taskName.getText();
         String title = taskTitle.getText();
@@ -189,7 +194,8 @@ public class TaskUI extends JPanel {
 
     }
 
-    //Corresponds to the field for the removed task
+    //MODIFIES: this, TodoList
+    //EFFECTS: Corresponds to the field for the removed task
     public void removeTask() {
         String name = taskName.getText();
         String title = taskTitle.getText();
@@ -209,7 +215,8 @@ public class TaskUI extends JPanel {
         return done;
     }
 
-    //Changes the state of the done button and the bar if done is clicked
+    //MODIFIES: this
+    //EFFECTS: Changes the state of the done button and the bar if done is clicked
     public void changeState() {
         this.setBackground(Color.green);
         taskName.setBackground(Color.green);

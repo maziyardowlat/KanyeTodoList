@@ -9,11 +9,9 @@ public class TitleBar extends JPanel {
     TitleBar() {
         this.setPreferredSize(new Dimension(400, 80));
 
-        JLabel titleText = new JLabel("Your Todo List: To remove a task, "
-                +
-                "enter the exact same fields as the task you are wanting to remove, then click remove.");
+        JLabel titleText = new JLabel("Your Todo List: Welcome");
         titleText.setPreferredSize(new Dimension(200, 80));
-        titleText.setFont(new Font("Sans-serif", Font.BOLD, 20));
+        titleText.setFont(new Font("Sans-serif", Font.BOLD, 15));
         titleText.setHorizontalAlignment(JLabel.CENTER);
         this.add(titleText);
 
