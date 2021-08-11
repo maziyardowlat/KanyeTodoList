@@ -11,7 +11,7 @@ public class Messing {
     Task tasky2 = new Task("Ulf", "Nick", "Perth", "Tomorrow", "91");
     Task task3 = new Task("Kanye", "Donda", "Esta", "Bibliotecha", "91");
 
-    public void messing() {
+    public Messing() {
         tasks.put(tasky, new ArrayList<TodoList>());
         tasks.put(tasky2, new ArrayList<TodoList>());
 

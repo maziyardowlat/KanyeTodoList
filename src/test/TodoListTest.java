@@ -1,6 +1,8 @@
-import model.Random;
 import model.Task;
 import model.TodoList;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.*;
@@ -10,12 +12,23 @@ public class TodoListTest {
     private Task task1;
     private TodoList todoList;
     private Task task2;
+    private Task tasky;
+    private Task tasky2;
+    private Task task3;
+    private HashMap<Task, ArrayList<TodoList>> tasks;
+    private TodoList todo1;
 
     @BeforeEach
     public void setup() {
         task1 = new Task("task", "The Title", "Tomorrow", "Today", "93");
         task2 = new Task("task", "Douye", "Tomorrow", "Today", "91");
         todoList = new TodoList();
+        Task tasky = new Task("asdf", "asdf", "asdf", "asdf", "93");
+        Task tasky2 = new Task("Ulf", "Nick", "Perth", "Tomorrow", "91");
+        Task task3 = new Task("Kanye", "Donda", "Esta", "Bibliotecha", "91");
+        tasks = new HashMap<>();
+        TodoList todo1 = new TodoList();
+
     }
 
     @Test
@@ -104,16 +117,12 @@ public class TodoListTest {
         assertEquals(1, todoList.getTasks().size());
     }
 
-//    @Test
-//    public void testException() throws Random {
-//        try {
-//            task2.except();
-//            task2.fix();
-//        } catch (Random e) {
-//            System.out.println("Good");
-//        }
-//        assertEquals(1, task2.getTitle());
-//    }
+    @Test
+    public void testMessing() {
+        tasks.put(tasky, new ArrayList<TodoList>());
+        ArrayList<TodoList> firstTodo = tasks.get(todo1);
+        assertFalse(firstTodo.contains(todo1));
+    }
 
 
 }
