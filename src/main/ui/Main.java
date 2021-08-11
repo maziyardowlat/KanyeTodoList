@@ -1,10 +1,13 @@
 package ui;
 
+import model.Messing;
+
 import java.io.FileNotFoundException;
 
 public class Main {
     public static void main(String[] args) {
         new AppFrame();
+        new Messing();
         try {
             new TodoListApp();
         } catch (FileNotFoundException e) {

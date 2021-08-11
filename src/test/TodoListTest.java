@@ -1,3 +1,4 @@
+import model.Random;
 import model.Task;
 import model.TodoList;
 import java.util.List;
@@ -8,10 +9,12 @@ import org.junit.jupiter.api.*;
 public class TodoListTest {
     private Task task1;
     private TodoList todoList;
+    private Task task2;
 
     @BeforeEach
     public void setup() {
         task1 = new Task("task", "The Title", "Tomorrow", "Today", "93");
+        task2 = new Task("task", "Douye", "Tomorrow", "Today", "91");
         todoList = new TodoList();
     }
 
@@ -100,6 +103,17 @@ public class TodoListTest {
         todoList.removeTask("West", "Kanye");
         assertEquals(1, todoList.getTasks().size());
     }
+
+//    @Test
+//    public void testException() throws Random {
+//        try {
+//            task2.except();
+//            task2.fix();
+//        } catch (Random e) {
+//            System.out.println("Good");
+//        }
+//        assertEquals(1, task2.getTitle());
+//    }
 
 
 }
