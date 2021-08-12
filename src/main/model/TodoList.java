@@ -36,9 +36,7 @@ public class TodoList implements Writable {
             if ((tasks.get(i).getName().equals(name)) && (tasks.get(i).getTitle().equals(title))) {
                 tasks.remove(tasks.indexOf(tasks.get(i)));
             } else {
-                if (!((tasks.get(i).getName().equals(name)) && (tasks.get(i).getTitle().equals(title)))) {
-                    throw new BadName();
-                }
+                throw new BadName();
             }
         }
     }

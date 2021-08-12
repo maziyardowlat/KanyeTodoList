@@ -88,11 +88,21 @@ public class TodoListTest {
     public void secondRemove() {
         todoList.addTask("asdf", "asdf", "asdf", "asdf",  "31");
         try {
-            todoList.removeTask("masdhoood", "asdfsdfsaf");
+            todoList.removeTask("", "");
+            fail("asdf");
         } catch(BadName badName){
-            System.out.println(("What are you doing"));
+            //REmove
         }
-        assertEquals(1, todoList.getTasks().size());
+    }
+
+    @Test
+    public void thirdRemove() {
+        todoList.addTask("asdf", "asdf", "asdf", "asdf",  "31");
+        try {
+            todoList.removeTask("asdf", "asdf");
+        } catch(BadName badName){
+            fail("asdf");
+        }
     }
 
     @Test
