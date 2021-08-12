@@ -74,6 +74,18 @@ public class TodoListTest {
     }
 
     @Test
+    public void noRemove(){
+        try {
+            todoList.removeTask("asdf", "asdf");
+        } catch(BadName badName) {
+            fail("asdf");
+        }
+        List<Task> tasks = todoList.getTasks();
+        assertEquals(0, tasks.size());
+
+    }
+
+    @Test
     public void testRemoveTwoTasks() {
         todoList.addTask("asdf", "asdf", "asdf", "asdf",  "31");
         todoList.addTask("assdfdfa", "asdf", "asdf", "asdf",  "32");
