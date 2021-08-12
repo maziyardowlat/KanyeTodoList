@@ -82,7 +82,17 @@ public class TodoListTest {
         }
         List<Task> tasks = todoList.getTasks();
         assertEquals(0, tasks.size());
+    }
 
+    @Test
+    public void secondRemove() {
+        todoList.addTask("asdf", "asdf", "asdf", "asdf",  "31");
+        try {
+            todoList.removeTask("masdhoood", "asdfsdfsaf");
+        } catch(BadName badName){
+            System.out.println(("What are you doing"));
+        }
+        assertEquals(1, todoList.getTasks().size());
     }
 
     @Test
