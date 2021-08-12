@@ -64,3 +64,20 @@ the enter it, then click the save button at the input level, then click remove a
 
 
 </p>
+
+<p>  Phase 4 
+
+Task 2: The one change that I decided to make was making the RemoveTask class robust, and 
+this change has been applied to the TodoList class, and all of the required tests have been changed to provision
+this addition. Furthermore, other classes have also gotten fixed with the try catch.
+
+Task 3: 
+
+Looking at the current UML diagram, it is not something too complex, and the main reason for this is that
+there is there is not much High Cohesion that is going on, and there is tight coupling to an extent. Something that I 
+would for sure change would be to split the TaskUI into two different classes, and the main reason for this that 
+right now there is an extra task constructor that is used to show the task, and I believe that with more time, 
+I could develop the Show Task into another class. That is for sure the most siginifcant change that I would make.
+
+
+</p>
