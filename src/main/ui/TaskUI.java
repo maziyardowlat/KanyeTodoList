@@ -48,7 +48,11 @@ public class TaskUI extends JPanel {
         taskColors();
         taskButtons();
 
+        someButton();
 
+    }
+
+    public void someButton() {
         doit.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 try {
@@ -65,7 +69,6 @@ public class TaskUI extends JPanel {
                 taskFunction();
             }
         });
-
     }
 
     //MODIFIES: this
