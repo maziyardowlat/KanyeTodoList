@@ -1,13 +1,17 @@
 package ui;
 
+import exceptions.BadName;
 import model.Task;
 import model.TodoList;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.File;
+import java.io.IOException;
 
 public class TaskUI extends JPanel {
 
@@ -47,10 +51,13 @@ public class TaskUI extends JPanel {
 
         doit.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
-                removeTask();
+                try {
+                    removeTask();
+                } catch (BadName badName) {
+                    paintComponent(getGraphics());
+                }
             }
         });
-
 
         save.addMouseListener(new MouseAdapter() {
             @Override
@@ -196,7 +203,7 @@ public class TaskUI extends JPanel {
 
     //MODIFIES: this, TodoList
     //EFFECTS: Corresponds to the field for the removed task
-    public void removeTask() {
+    public void removeTask() throws BadName {
         String name = taskName.getText();
         String title = taskTitle.getText();
         String dueDate = taskDueDate.getText();
@@ -225,6 +232,19 @@ public class TaskUI extends JPanel {
 
     public TodoList getTodo() {
         return todo;
+    }
+
+    //MODIFIES: this
+    //Adds a picture of Kanye to the todoList
+    public void paintComponent(Graphics g) {
+        Image backgroundImage;
+        // Draw the background image
+        try {
+            backgroundImage = ImageIO.read(new File("./data/Unknown.jpg"));
+            g.drawImage(backgroundImage, 0, 0, this);
+        } catch (IOException ioException) {
+            System.out.println("Exception!!!!!");
+        }
     }
 
 

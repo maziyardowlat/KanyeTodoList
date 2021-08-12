@@ -1,4 +1,4 @@
-import model.Messing;
+import exceptions.BadName;
 import model.Task;
 import model.TodoList;
 
@@ -51,7 +51,11 @@ public class TodoListTest {
     public void testRemoveATask() {
         todoList.addTask("asdf", "asdf", "asdf", "asdf",  "91");
         todoList.addTask("assdfdfa", "asdf", "asdf", "asdf", "91");
-        todoList.removeTask("assdfdfa", "asdf");
+        try {
+            todoList.removeTask("asdf", "asdf");
+        } catch (BadName badName) {
+            //All Good
+        }
         List<Task> tasks = todoList.getTasks();
         assertEquals(1, tasks.size());
     }
@@ -60,8 +64,16 @@ public class TodoListTest {
     public void testRemoveTwoTasks() {
         todoList.addTask("asdf", "asdf", "asdf", "asdf",  "31");
         todoList.addTask("assdfdfa", "asdf", "asdf", "asdf",  "32");
-        todoList.removeTask("assdfdfa", "asdf");
-        todoList.removeTask("asdf", "asdf");
+        try {
+            todoList.removeTask("asdf", "asdf");
+        } catch (BadName badName) {
+            //This is good
+        }
+        try {
+            todoList.removeTask("assdfdfa", "asdf");
+        } catch (BadName badName) {
+            //This is good
+        }
         List<Task> tasks = todoList.getTasks();
         assertEquals(0, tasks.size());
     }
@@ -69,7 +81,11 @@ public class TodoListTest {
     @Test
     public void testSpecificRemoval() {
         todoList.addTask("name", "title", "name", "title",  "65");
-        todoList.removeTask("name","title");
+        try {
+            todoList.removeTask("name","title");
+        } catch (BadName badName) {
+            //This is good
+        }
         List<Task> tasks = todoList.getTasks();
         assertEquals(0, tasks.size());
     }
@@ -107,14 +123,22 @@ public class TodoListTest {
     @Test
     public void testRemoveFails() {
         todoList.addTask("Science","Biology", "Tomorrow", "Today", "67");
-        todoList.removeTask("Science", "Math");
+        try {
+            todoList.removeTask("Science", "Math");
+        } catch (BadName badName) {
+            //This is good
+        }
         assertEquals(1, todoList.getTasks().size());
     }
 
     @Test
     public void testRemovefailsName(){
         todoList.addTask("Kanye", "West", "Monday", "Today", "43");
-        todoList.removeTask("West", "Kanye");
+        try {
+            todoList.removeTask("West", "Kanye");
+        } catch (BadName badName) {
+            //This is good
+        }
         assertEquals(1, todoList.getTasks().size());
     }
 

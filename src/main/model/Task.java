@@ -1,5 +1,6 @@
 package model;
 
+import exceptions.BadName;
 import org.json.JSONObject;
 
 // Represents a Task that has a name, a title, notes a Due Date, start Date and if the task if finished or not

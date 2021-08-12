@@ -1,5 +1,6 @@
 package ui;
 
+import exceptions.BadName;
 import model.Task;
 import model.TodoList;
 import persistence.JsonReader;
@@ -175,7 +176,11 @@ public class TodoListApp {
     //Otherwise is returns a message
     private void remover(String name, String title) {
         if (list1.getTasks().size() > 0) {
-            list1.removeTask(name, title);
+            try {
+                list1.removeTask(name, title);
+            } catch (BadName badName) {
+                System.out.println("Please Enter Something Else");
+            }
         } else {
             dumbo(task1);
         }

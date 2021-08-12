@@ -1,5 +1,6 @@
 package model;
 
+import exceptions.BadName;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import persistence.Writable;
@@ -30,13 +31,18 @@ public class TodoList implements Writable {
 
     // MODIFIES: this
     // EFFECTS: removes this task from the todolist if the name of the task and the title of the task matches.
-    public void removeTask(String name, String title) {
+    public void removeTask(String name, String title) throws BadName {
         for (int i = 0; i < tasks.size(); i++) {
             if ((tasks.get(i).getName().equals(name)) && (tasks.get(i).getTitle().equals(title))) {
                 tasks.remove(tasks.indexOf(tasks.get(i)));
+            } else {
+                if (!((tasks.get(i).getName().equals(name)) && (tasks.get(i).getTitle().equals(title)))) {
+                    throw new BadName();
+                }
             }
         }
     }
+
 
 
 
