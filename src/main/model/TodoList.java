@@ -11,7 +11,6 @@ import java.util.List;
 public class TodoList implements Writable {
     private ArrayList<Task> tasks;
 
-
     //Constructor, makes a new TodoList
     public TodoList() {
         tasks = new ArrayList<>();
@@ -40,8 +39,6 @@ public class TodoList implements Writable {
             }
         }
     }
-
-
 
 
     @Override
