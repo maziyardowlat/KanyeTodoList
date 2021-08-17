@@ -1,23 +1,7 @@
-{"tasks": [
-    {
-        "dueDate": "Your Task Due Date here",
-        "grade": "Your Grade here",
-        "name": "Superman",
-        "title": "asdf",
-        "startDate": "Your Task Start Date here"
-    },
-    {
-        "dueDate": "Fifteeen",
-        "grade": "91",
-        "name": "asdf",
-        "title": "1234",
-        "startDate": "nineteern"
-    },
-    {
-        "dueDate": "Fifteeen",
-        "grade": "91",
-        "name": "asdf",
-        "title": "1234",
-        "startDate": "nineteern"
-    }
-]}
+{"tasks": [{
+    "dueDate": "asdfasdf",
+    "grade": "1919119",
+    "name": "asdfasdf",
+    "title": "asdf",
+    "startDate": "asdfasdfsadfadsf"
+}]}
