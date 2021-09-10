@@ -1,4 +1,4 @@
-# DSPD- Dynamic Student Daily Planner 
+# DSTL- Dynamic Student Todo List 
 
 ## A daily scheduler for the dynamic and ever-changing plans of Student with Grade Keeping Capabilities
 
